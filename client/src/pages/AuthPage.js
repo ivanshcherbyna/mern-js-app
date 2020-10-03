@@ -13,7 +13,7 @@ export const AuthPage = () =>{
 
 	useEffect(()=>{
 		window.M.updateTextFields();
-	},[])
+	},[]);
 
 	useEffect(()=>{
 		message(error);
@@ -62,6 +62,7 @@ const loginHandler = async() =>{
 									name="email"
 									className="yellow-input"
 									onChange={changeHandler}
+									value={form.email}
 								/>
 									<label htmlFor="first_name">Email</label>
 							</div>
@@ -74,6 +75,7 @@ const loginHandler = async() =>{
 									name="password"
 									className="yellow-input"
 									onChange={changeHandler}
+									value={form.password}
 								/>
 									<label htmlFor="first_name">Пароль</label>
 							</div>
