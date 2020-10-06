@@ -16,13 +16,13 @@ router.post('/generate', auth, async (req, res) => {
 		const existing = await Link.findOne({ from });
 
 		if (existing){
-			return res.jsqon({ link: existing });
+			return res.json({ link: existing });
 		}
 
 		const to = baseUrl + '/t/' + code;
 
 		const link = new Link({
-			code, to, from, owner: req.userId
+			code, to, from, owner: req.user.userId
 		});
 
 		await  link.save();
@@ -45,7 +45,7 @@ router.get('/', auth, async (req, res) => {
 
 router.get('/:id', auth, async (req, res) => {
 	try {
-		const link = await Link.findById(req.param.id);
+		const link = await Link.findById(req.params.id);
 		res.json(link);
 
 	} catch (e){

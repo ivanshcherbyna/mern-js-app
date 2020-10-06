@@ -30,7 +30,7 @@ const registerHandler = async() =>{
 		message(data.message);
 	}
 	catch (e){
-
+		message(e.message);
 	}
 };
 
