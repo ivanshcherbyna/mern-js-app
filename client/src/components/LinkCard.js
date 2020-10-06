@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const LinkCard = ({ link }) => {console.log(link)
+export const LinkCard = ({ link }) => {
 return(
 	<>
 		<h2>Ссылка</h2>
